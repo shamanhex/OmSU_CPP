@@ -1,5 +1,5 @@
-#define TIME_TEST  100.0  // Время тестирования функции в секундах
-#define SIZE_BUF  1000  // Размер буфера для тестирования
+#define TIME_TEST 60000  // Время тестирования функции в милисекундах
+#define SIZE_BUF  100  // Размер буфера для тестирования
 
 typedef unsigned char BYTE;
 typedef unsigned long ULONG;
@@ -17,7 +17,7 @@ void func(BYTE *data)
   }
 }
 
-void timer() {
+void process_data() {
   ULONG count = 0;
   long timer;
   BYTE data[SIZE_BUF];
@@ -35,7 +35,7 @@ void timer() {
   }
   Serial.print("Speed =  ");
   Serial.print(count / TIME_TEST);
-  Serial.println(" kb/sec\n");
+  Serial.println(" kb/sec");
 }
 
 void setup() {
@@ -43,6 +43,6 @@ void setup() {
 }
 
 void loop() {
-  timer();
+  process_data();
   delay(3000);
 }

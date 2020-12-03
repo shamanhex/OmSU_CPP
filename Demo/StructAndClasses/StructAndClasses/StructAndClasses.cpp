@@ -21,7 +21,6 @@ public:
         this->Y = y;
     };
 };
-  
 
 int main()
 {
@@ -58,3 +57,4 @@ int main()
     ((Doctor*) x)->PrintName();
     delete x;
 }
+
